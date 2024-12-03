@@ -5,6 +5,8 @@ Kelas : TI.24.A.5 <P>
 Mata Kuliah : Bahasa Pemrograman <p>
 
 ## Flowchart
+![foto4](https://github.com/user-attachments/assets/321d87a3-31db-4f6d-b953-864734140da3)
+
 
 
 ## Kode Program 
