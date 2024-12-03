@@ -8,5 +8,6 @@ Mata Kuliah : Bahasa Pemrograman <p>
 
 
 ## Kode Program 
-! [GAMBAR 1](gambar1.png)
-! [GAMBAR 2](gambar2.png)
+![foto1](https://github.com/user-attachments/assets/4e519bcd-b54c-46b3-9e71-6ba32fc7ceca)
+![foto2](https://github.com/user-attachments/assets/ea4304d5-d586-4ed4-8b91-653815bf8b8a)
+
