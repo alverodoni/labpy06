@@ -32,7 +32,7 @@ Mata Kuliah : Bahasa Pemrograman <p>
            def calculate_final_grade(self):
                return round((self.tugas * 0.3) + (self.uts * 0.35) + (self.uas * 0.35), 2)
    ```
-   - Kode ini mencetak judul program dan mendefinisikan kelas ```Student``` yang memiliki atribut ```nim```, ```nama```, ```tugas```, ```uts```, ```uas```, dan ```akhir```.
+   - tujuan Kode ini mencetak judul program dan mendefinisikan kelas ```Student``` yang memiliki atribut ```nim```, ```nama```, ```tugas```, ```uts```, ```uas```, dan ```akhir```.
    - ```calculate_final_grade``` adalah metode yang menghitung nilai akhir berdasarkan bobot tugas (30%), UTS (35%), dan UAS (35%).
        
 2. Fungsi Menampilkan Menu dan Daftar Mahasiswa:
@@ -65,7 +65,7 @@ Mata Kuliah : Bahasa Pemrograman <p>
                      return index
               return None
 ```
-   - ```find_student_index``` mencari indeks mahasiswa berdasarkan Nama. Mengembalikan ```None``` jika Nama tidak ditemukan.
+   - ```find_student_index``` Fungsi ini mencari indeks mahasiswa dalam daftar students berdasarkan Nama. Jika Nama ditemukan, fungsi mengembalikan indeksnya; jika tidak, fungsi mengembalikan None.
 
 
 4. Fungsi Utama:
@@ -116,7 +116,7 @@ Mata Kuliah : Bahasa Pemrograman <p>
            main()
 ```
 
-   - Fungsi ```main``` adalah fungsi utama yang menjalankan program.
+   - ```Fungsi main``` Menjalankan program utama dengan menginisialisasi daftar students dan menyediakan antarmuka menu untuk pengguna. Pengguna dapat menambah, melihat, mengubah, atau menghapus data mahasiswa, serta keluar dari program.
    - Variabel ```students``` menyimpan daftar objek ```Student```.
    - Program menampilkan menu dan menangani pilihan pengguna:
      - **Tambah (```t```)**: Menambah data mahasiswa baru ke dalam daftar ```students```.
