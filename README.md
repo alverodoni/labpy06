@@ -119,11 +119,11 @@ Mata Kuliah : Bahasa Pemrograman <p>
    - ```Fungsi main``` Menjalankan program utama dengan menginisialisasi daftar students dan menyediakan antarmuka menu untuk pengguna. Pengguna dapat menambah, melihat, mengubah, atau menghapus data mahasiswa, serta keluar dari program.
    - Variabel ```students``` menyimpan daftar objek ```Student```.
    - Program menampilkan menu dan menangani pilihan pengguna:
-     - **Tambah (```t```)**: Menambah data mahasiswa baru ke dalam daftar ```students```.
-     - **Lihat (```l```)**: Menampilkan daftar mahasiswa.
-     - **Ubah (```u```)**: Mengubah data mahasiswa berdasarkan Nama yang diberikan. Jika Nama ditemukan, data mahasiswa diperbarui dengan data baru.
-     - **Hapus (```h```)**: Menghapus data mahasiswa berdasarkan Nama yang diberikan. Jika Nama ditemukan, data mahasiswa dihapus dari daftar students.
-     - **Keluar (```k```)**: Keluar dari program.
+     - **Tambah (```T```)**: Menambah data mahasiswa baru ke dalam daftar ```students```.
+     - **Lihat (```L```)**: Menampilkan daftar mahasiswa.
+     - **Ubah (```U```)**: Mengubah data mahasiswa berdasarkan Nama yang diberikan. Jika Nama ditemukan, data mahasiswa diperbarui dengan data baru.
+     - **Hapus (```H```)**: Menghapus data mahasiswa berdasarkan Nama yang diberikan. Jika Nama ditemukan, data mahasiswa dihapus dari daftar students.
+     - **Keluar (```K```)**: Keluar dari program.
 
 ## Ouput Program
 ![foto3](https://github.com/user-attachments/assets/083fdb48-f1dc-413f-baf5-7d8daa6ab79e)
