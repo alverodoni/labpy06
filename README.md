@@ -73,4 +73,7 @@ Cara Kerja Program
         Keluar: Mengakhiri program.
     Program terus berjalan hingga pengguna memilih opsi Keluar.
 
+## Ouput Program
+![foto3](https://github.com/user-attachments/assets/083fdb48-f1dc-413f-baf5-7d8daa6ab79e)
+
 
