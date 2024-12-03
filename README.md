@@ -1,4 +1,4 @@
-# labpy06
+## labpy06
 Nama : Doni Alvero <p>
 Nim : 312410663 <p>
 Kelas : TI.24.A.5 <P>
