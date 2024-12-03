@@ -14,66 +14,85 @@ Mata Kuliah : Bahasa Pemrograman <p>
 ![foto2](https://github.com/user-attachments/assets/ea4304d5-d586-4ed4-8b91-653815bf8b8a)
 
 ### Penjelasan Program
-Komponen Utama Program
-1. Class Student
+1. Header dan Kelas Student
+   class Student:
+    def __init__(self, nim, nama, tugas, uts, uas):
+        self.nim = nim
+        self.nama = nama
+        self.tugas = tugas
+        self.uts = uts
+        self.uas = uas
+        self.akhir = self.calculate_final_grade()
 
-    Deskripsi: Kelas ini digunakan untuk merepresentasikan setiap mahasiswa.
-    Atribut:
-        nim: Nomor Induk Mahasiswa (string).
-        nama: Nama mahasiswa (string).
-        tugas: Nilai tugas (integer).
-        uts: Nilai UTS (integer).
-        uas: Nilai UAS (integer).
-        akhir: Nilai akhir yang dihitung menggunakan metode calculate_final_grade.
-    Metode:
-        _init_: Konstruktor untuk menginisialisasi atribut ketika objek dibuat.
-        calculate_final_grade: Menghitung nilai akhir dengan rumus:
-        nilai_akhir=(tugas×0.3)+(uts×0.35)+(uas×0.35)
-        nilai_akhir=(tugas×0.3)+(uts×0.35)+(uas×0.35)
+    def calculate_final_grade(self):
+        return round((self.tugas * 0.3) + (self.uts * 0.35) + (self.uas * 0.35), 2)
+   
+    Penjelasan:
+        Kode ini dimulai dengan mencetak judul program "Program Input Nilai" dan garis pemisah.
+        Kelas Student didefinisikan dengan konstruktor __init__ yang menerima parameter untuk NIM, nama, nilai tugas, UTS, dan UAS.
+        Atribut akhir dihitung dengan memanggil metode calculate_final_grade, yang mengalikan nilai tugas dengan 30%, UTS dengan 35%, dan UAS dengan 35%, lalu membulatkannya menjadi dua desimal.
 
-2. Fungsi Utility
-a. display_menu
+   2. Fungsi Menampilkan Menu dan Daftar Mahasiswa
+      def display_menu():
+    print("\n[(L)ihat, (T)ambah, (U)bah, (H)apus, (K)eluar]: ", end=' ')
 
-    Menampilkan pilihan menu utama kepada pengguna.
+    def display_students(students):
+    print("\nDaftar Nilai")
+    print("=" * 84)
+    print(f"| {'NO':<3} | {'NIM':<10} | {'NAMA':<30} | {'TUGAS':<6} | {'UTS':<4} | {'UAS':<4} | {'AKHIR':<5} |")
+    print("=" * 84)
+    if not students:
+        print(f"| {'TIDAK ADA DATA':^80} |")
+    else:
+        for i, student in enumerate(students, start=1):
+            print(f"| {i:<3} | {student.nim:<10} | {student.nama:<30} | {student.tugas:<6} | {student.uts:<4} | {student.uas:<4} | {student.akhir:<5} |")
+    print("=" * 84)
+    
+    Penjelasan:
+        Fungsi display_menu mencetak pilihan menu yang tersedia untuk pengguna.
+        Fungsi display_students menampilkan daftar nilai mahasiswa dalam format tabel yang rapi. Jika daftar mahasiswa kosong, akan ditampilkan pesan "TIDAK ADA DATA". Jika ada data, setiap mahasiswa ditampilkan dengan              informasi mereka, termasuk NIM, nama, nilai tugas, UTS, UAS, dan nilai akhir.
 
-b. display_students
+   3. Fungsi Mencari Indeks Mahasiswa
+      def find_student_index(students, nim):
+    for index, student in enumerate(students):
+        if student.nim == nim:
+            return index
+    return None
+    Penjelasan:
+        Fungsi find_student_index mencari indeks mahasiswa dalam daftar berdasarkan NIM yang diberikan. Jika NIM ditemukan, fungsi ini mengembalikan indeksnya; jika tidak, mengembalikan None.
 
-    Menampilkan daftar nilai mahasiswa dalam bentuk tabel.
-    Jika tidak ada data, akan menampilkan pesan "TIDAK ADA DATA".
-
-c. find_student_index
-
-    Mencari indeks mahasiswa berdasarkan nama.
-    Digunakan untuk operasi ubah dan hapus.
-
-3. Fungsi Utama main
-
-    Deskripsi: Fungsi utama untuk menjalankan aplikasi. Fungsi ini mengelola seluruh alur kerja program, termasuk menerima input pengguna dan menjalankan fungsi sesuai pilihan.
-    Alur Kerja:
-        Tambahkan Data (T):
-            Memasukkan NIM, nama, nilai tugas, UTS, dan UAS.
-            Nilai mahasiswa disimpan sebagai objek Student di dalam list students.
-        Lihat Data (L):
-            Menampilkan semua data mahasiswa dalam tabel.
-        Ubah Data (U):
-            Mencari mahasiswa berdasarkan nama.
-            Jika ditemukan, memperbarui data mahasiswa dengan nilai baru.
-        Hapus Data (H):
-            Menghapus data mahasiswa berdasarkan nama.
-        Keluar (K):
-            Mengakhiri program.
-
-Cara Kerja Program
-
-    Program dimulai dengan menjalankan fungsi main.
-    Menu utama ditampilkan melalui fungsi display_menu.
-    Pengguna memilih opsi dengan memasukkan huruf (T, L, U, H, K):
-        Tambah Data: Menambahkan mahasiswa baru.
-        Lihat Data: Menampilkan tabel daftar nilai mahasiswa.
-        Ubah Data: Memperbarui informasi mahasiswa.
-        Hapus Data: Menghapus informasi mahasiswa dari daftar.
-        Keluar: Mengakhiri program.
-    Program terus berjalan hingga pengguna memilih opsi Keluar.
+      4. Fungsi Utama
+         def main():
+    students = []
+    while True:
+        display_menu()
+        choice = input().lower()
+        if choice == 't':
+            nim = input("\nNIM: ")
+            nama = input("Nama: ")
+            tugas = int(input("Nilai Tugas: "))
+            uts = int(input("Nilai UTS: "))
+            uas = int(input("Nilai UAS: "))
+            students.append(Student(nim, nama, tugas, uts, uas))
+        elif choice == 'l':
+            display_students(students)
+        elif choice == 'u':
+            display_students(students)
+            nim = input("\nMasukkan NIM mahasiswa yang akan diubah: ")
+            index = find_student_index(students, nim)
+            if index is not None:
+                print("Data baru:")
+                nama = input("Nama: ")
+                tugas = int(input("Nilai Tugas: "))
+                uts = int(input("Nilai UTS: "))
+                uas = int(input("Nilai UAS: "))
+                students[index] = Student(nim, nama, tugas, uts, uas)
+            else:
+                print("Mahasiswa dengan NIM tersebut tidak ditemukan.")
+        elif choice == 'h':
+            display_students(students)
+            nim = input("\nMasukkan NIM mahasiswa yang akan dihapus: ")
+            index = find
 
 ## Ouput Program
 ![foto3](https://github.com/user-attachments/assets/083fdb48-f1dc-413f-baf5-7d8daa6ab79e)
